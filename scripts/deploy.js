@@ -11,11 +11,11 @@ const version = "1";
 async function main() {
   const [signer] = await hre.ethers.getSigners();
 
-  const TestVRF = await ethers.getContractFactory("Test", signer);
-  testVRF = await TestVRF.deploy(name, version);
-  await testVRF.deployed();
+  const TestContract = await ethers.getContractFactory("Test", signer);
+  testContract = await TestContract.deploy(name, version);
+  await testContract.deployed();
 
-  console.log(testVRF.address);
+  console.log(testContract.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
